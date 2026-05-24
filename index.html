@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchPad - Free Web Hosting & Subdomains</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center max-w-7xl mx-auto rounded-b-xl">
+        <div class="text-2xl font-bold text-indigo-600">LaunchPad.com</div>
+        <div class="space-x-4">
+            <a href="#features" class="text-gray-600 hover:text-indigo-600">Features</a>
+            <a href="#pricing" class="text-gray-600 hover:text-indigo-600">Pricing</a>
+            <a href="/billing/login" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Client Portal</a>
+        </div>
+    </nav>
+
+    <!-- Hero & Subdomain Checker Section -->
+    <header class="text-center py-20 px-4 max-w-4xl mx-auto">
+        <h1 class="text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            Launch Your Website Today, <span class="text-indigo-600">100% Free</span>.
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">Get instant cloud hosting and a free subdomain. No credit card required ever.</p>
+
+        <!-- Subdomain Search Box -->
+        <div class="bg-white p-4 rounded-2xl shadow-xl max-w-2xl mx-auto border border-gray-100">
+            <div class="flex items-center border border-gray-300 rounded-xl p-2 bg-gray-50 focus-within:ring-2 focus-within:ring-indigo-500 bg-white">
+                <input id="subdomainInput" type="text" placeholder="your-website-name" class="w-full px-3 py-2 bg-transparent outline-none text-gray-800 text-lg font-medium placeholder-gray-400">
+                <span class="text-gray-500 font-semibold px-2 text-lg">.launchpad.com</span>
+                <button onclick="checkSubdomain()" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition ml-2 whitespace-nowrap">
+                    Check Availability
+                </button>
+            </div>
+            <!-- Dynamic Result Message -->
+            <div id="resultMessage" class="mt-4 text-left px-2 hidden"></div>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Choose Your Plan</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <!-- Free Plan -->
+            <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800">Hobbyist</h3>
+                    <div class="text-4xl font-extrabold text-gray-900 my-4">$0 <span class="text-sm font-normal text-gray-500">/ forever</span></div>
+                    <ul class="space-y-3 text-gray-600 mb-8">
+                        <li class="flex items-center">✅ Free .launchpad.com Subdomain</li>
+                        <li class="flex items-center">✅ 500 MB SSD Storage</li>
+                        <li class="flex items-center">✅ 5 GB Bandwidth</li>
+                        <li class="flex items-center">❌ No Custom TLD (.com/.net)</li>
+                    </ul>
+                </div>
+                <a href="/billing/signup?plan=free" class="w-full text-center bg-gray-100 text-gray-800 py-3 rounded-xl font-semibold hover:bg-gray-200 transition block">Get Started</a>
+            </div>
+
+            <!-- Premium Plan (Your Moneymaker) -->
+            <div class="bg-white border-2 border-indigo-600 rounded-2xl p-8 shadow-md relative flex flex-col justify-between">
+                <span class="absolute -top-3 right-6 bg-indigo-600 text-white px-3 py-1 text-xs uppercase font-bold rounded-full tracking-wider">Popular</span>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800">Pro Developer</h3>
+                    <div class="text-4xl font-extrabold text-gray-900 my-4">$4.99 <span class="text-sm font-normal text-gray-500">/ month</span></div>
+                    <ul class="space-y-3 text-gray-600 mb-8">
+                        <li class="flex items-center">✅ Connect Your Own Custom Domain</li>
+                        <li class="flex items-center">✅ 20 GB NVMe SSD Storage</li>
+                        <li class="flex items-center">✅ Unmetered Bandwidth</li>
+                        <li class="flex items-center">✅ Free SSL Certificate</li>
+                    </ul>
+                </div>
+                <a href="/billing/signup?plan=pro" class="w-full text-center bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition block">Go Pro</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JavaScript Link -->
+    <script src="checker.js"></script>
+</body>
+</html>
